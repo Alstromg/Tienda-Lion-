@@ -1,6 +1,5 @@
 import Navbar from "./Componentes/navbar";
 import "./app.css";
-import { Conocer } from "./Componentes/Conocer";
 import { Inicio } from "./Componentes/Inicio";
 import { PieDePagina } from "./Componentes/Piedepagina";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -22,7 +21,6 @@ function App() {
             <Route path="/productos" element={<ItemListContainer />} />
             <Route path="/productos/:categoria" element={<ItemListContainer />} />
             <Route path="/productos/:categoria/:id" element={<DesProducto />} />
-            <Route path="/conocer" element={<Conocer />} />
             <Route path="/carrito" element={<CartWidget />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="*" element={<Navigate to="/inicio" />} />
