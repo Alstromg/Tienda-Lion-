@@ -41,6 +41,19 @@ addDoc(ordersRef, orden)
     });
     vaciar();
     alert(`Su pedido ha sido correctamente guardado bajo el ID de orden: ${orderId}`);
+    carta.forEach((item) =>{
+      const docRef = doc(db, "productos", item.id)
+
+      getDoc(docRef)
+      .then((doc) =>{
+        const stock = doc.data().stock
+
+        uptadeDoc(docRef,{
+          stock: stock - item.cantidad
+        })
+      })
+      
+    })
   });
 
   };
